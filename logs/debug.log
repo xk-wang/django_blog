@@ -1,0 +1,1193 @@
+(0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+(0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+(0.002) SELECT COUNT(*) AS "__count" FROM "blog_post"; args=()
+(0.000) SELECT "blog_post"."id", "blog_post"."title", "blog_post"."avatar", "blog_post"."body", "blog_post"."created_time", "blog_post"."modified_time", "blog_post"."author_id", "blog_post"."total_views", "blog_post"."column_id" FROM "blog_post" ORDER BY "blog_post"."created_time" DESC  LIMIT 21; args=()
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-12-11 07:46:40.394931' AND "django_session"."session_key" = 'u193zwymi292fqs5s8kw8gs9seqxgug7'); args=('2019-12-11 07:46:40.394931', 'u193zwymi292fqs5s8kw8gs9seqxgug7')
+(0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 5; args=(5,)
+Internal Server Error: /blog/post-list/
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\defaulttags.py", line 1021, in find_library
+    return parser.libraries[name]
+KeyError: 'my_filters_and_tags'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\djangopro\my_blog\blog\views.py", line 42, in post_list
+    'search':search, 'column':column,'tag':tag,})
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loader_tags.py", line 266, in do_extends
+    nodelist = parser.parse()
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\defaulttags.py", line 1078, in load
+    lib = find_library(parser, name)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\defaulttags.py", line 1025, in find_library
+    name, "\n".join(sorted(parser.libraries)),
+django.template.exceptions.TemplateSyntaxError: 'my_filters_and_tags' is not a registered tag library. Must be one of:
+account
+admin_list
+admin_modify
+admin_static
+admin_urls
+cache
+i18n
+l10n
+log
+mptt_admin
+mptt_tags
+notifications_tags
+socialaccount
+static
+staticfiles
+tz
+"GET /blog/post-list/ HTTP/1.1" 500 167360
+(0.001) SELECT COUNT(*) AS "__count" FROM "blog_post"; args=()
+(0.000) SELECT "blog_post"."id", "blog_post"."title", "blog_post"."avatar", "blog_post"."body", "blog_post"."created_time", "blog_post"."modified_time", "blog_post"."author_id", "blog_post"."total_views", "blog_post"."column_id" FROM "blog_post" ORDER BY "blog_post"."created_time" DESC  LIMIT 21; args=()
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-12-11 07:47:58.674481' AND "django_session"."session_key" = 'u193zwymi292fqs5s8kw8gs9seqxgug7'); args=('2019-12-11 07:47:58.674481', 'u193zwymi292fqs5s8kw8gs9seqxgug7')
+(0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 5; args=(5,)
+Internal Server Error: /blog/post-list/
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\defaulttags.py", line 1021, in find_library
+    return parser.libraries[name]
+KeyError: 'my_filters_and_tags'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\djangopro\my_blog\blog\views.py", line 42, in post_list
+    'search':search, 'column':column,'tag':tag,})
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loader_tags.py", line 266, in do_extends
+    nodelist = parser.parse()
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\defaulttags.py", line 1078, in load
+    lib = find_library(parser, name)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\defaulttags.py", line 1025, in find_library
+    name, "\n".join(sorted(parser.libraries)),
+django.template.exceptions.TemplateSyntaxError: 'my_filters_and_tags' is not a registered tag library. Must be one of:
+account
+admin_list
+admin_modify
+admin_static
+admin_urls
+cache
+i18n
+l10n
+log
+mptt_admin
+mptt_tags
+notifications_tags
+socialaccount
+static
+staticfiles
+tz
+"GET /blog/post-list/ HTTP/1.1" 500 167495
+(0.002) SELECT COUNT(*) AS "__count" FROM "blog_post"; args=()
+(0.001) SELECT "blog_post"."id", "blog_post"."title", "blog_post"."avatar", "blog_post"."body", "blog_post"."created_time", "blog_post"."modified_time", "blog_post"."author_id", "blog_post"."total_views", "blog_post"."column_id" FROM "blog_post" ORDER BY "blog_post"."created_time" DESC  LIMIT 21; args=()
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-12-11 08:00:38.494819' AND "django_session"."session_key" = 'u193zwymi292fqs5s8kw8gs9seqxgug7'); args=('2019-12-11 08:00:38.494819', 'u193zwymi292fqs5s8kw8gs9seqxgug7')
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 5; args=(5,)
+Internal Server Error: /blog/post-list/
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\defaulttags.py", line 1021, in find_library
+    return parser.libraries[name]
+KeyError: 'my_filters_and_tags'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\djangopro\my_blog\blog\views.py", line 42, in post_list
+    'search':search, 'column':column,'tag':tag,})
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loader_tags.py", line 266, in do_extends
+    nodelist = parser.parse()
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\defaulttags.py", line 1078, in load
+    lib = find_library(parser, name)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\defaulttags.py", line 1025, in find_library
+    name, "\n".join(sorted(parser.libraries)),
+django.template.exceptions.TemplateSyntaxError: 'my_filters_and_tags' is not a registered tag library. Must be one of:
+account
+admin_list
+admin_modify
+admin_static
+admin_urls
+cache
+i18n
+l10n
+log
+mptt_admin
+mptt_tags
+notifications_tags
+socialaccount
+static
+staticfiles
+tz
+"GET /blog/post-list/ HTTP/1.1" 500 167495
+(0.001) SELECT COUNT(*) AS "__count" FROM "blog_post"; args=()
+(0.000) SELECT "blog_post"."id", "blog_post"."title", "blog_post"."avatar", "blog_post"."body", "blog_post"."created_time", "blog_post"."modified_time", "blog_post"."author_id", "blog_post"."total_views", "blog_post"."column_id" FROM "blog_post" ORDER BY "blog_post"."created_time" DESC  LIMIT 21; args=()
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-12-11 08:00:51.415173' AND "django_session"."session_key" = 'u193zwymi292fqs5s8kw8gs9seqxgug7'); args=('2019-12-11 08:00:51.415173', 'u193zwymi292fqs5s8kw8gs9seqxgug7')
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 5; args=(5,)
+Internal Server Error: /blog/post-list/
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\defaulttags.py", line 1021, in find_library
+    return parser.libraries[name]
+KeyError: 'my_filters_and_tags'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\djangopro\my_blog\blog\views.py", line 42, in post_list
+    'search':search, 'column':column,'tag':tag,})
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loader_tags.py", line 266, in do_extends
+    nodelist = parser.parse()
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\defaulttags.py", line 1078, in load
+    lib = find_library(parser, name)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\defaulttags.py", line 1025, in find_library
+    name, "\n".join(sorted(parser.libraries)),
+django.template.exceptions.TemplateSyntaxError: 'my_filters_and_tags' is not a registered tag library. Must be one of:
+account
+admin_list
+admin_modify
+admin_static
+admin_urls
+cache
+i18n
+l10n
+log
+mptt_admin
+mptt_tags
+notifications_tags
+socialaccount
+static
+staticfiles
+tz
+"GET /blog/post-list/ HTTP/1.1" 500 167495
+(0.002) SELECT COUNT(*) AS "__count" FROM "blog_post"; args=()
+(0.000) SELECT "blog_post"."id", "blog_post"."title", "blog_post"."avatar", "blog_post"."body", "blog_post"."created_time", "blog_post"."modified_time", "blog_post"."author_id", "blog_post"."total_views", "blog_post"."column_id" FROM "blog_post" ORDER BY "blog_post"."created_time" DESC  LIMIT 21; args=()
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-12-11 08:00:52.660085' AND "django_session"."session_key" = 'u193zwymi292fqs5s8kw8gs9seqxgug7'); args=('2019-12-11 08:00:52.660085', 'u193zwymi292fqs5s8kw8gs9seqxgug7')
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 5; args=(5,)
+Internal Server Error: /blog/post-list/
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\defaulttags.py", line 1021, in find_library
+    return parser.libraries[name]
+KeyError: 'my_filters_and_tags'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\djangopro\my_blog\blog\views.py", line 42, in post_list
+    'search':search, 'column':column,'tag':tag,})
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loader_tags.py", line 266, in do_extends
+    nodelist = parser.parse()
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\defaulttags.py", line 1078, in load
+    lib = find_library(parser, name)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\defaulttags.py", line 1025, in find_library
+    name, "\n".join(sorted(parser.libraries)),
+django.template.exceptions.TemplateSyntaxError: 'my_filters_and_tags' is not a registered tag library. Must be one of:
+account
+admin_list
+admin_modify
+admin_static
+admin_urls
+cache
+i18n
+l10n
+log
+mptt_admin
+mptt_tags
+notifications_tags
+socialaccount
+static
+staticfiles
+tz
+"GET /blog/post-list/ HTTP/1.1" 500 167495
+(0.001) SELECT COUNT(*) AS "__count" FROM "blog_post"; args=()
+(0.001) SELECT "blog_post"."id", "blog_post"."title", "blog_post"."avatar", "blog_post"."body", "blog_post"."created_time", "blog_post"."modified_time", "blog_post"."author_id", "blog_post"."total_views", "blog_post"."column_id" FROM "blog_post" ORDER BY "blog_post"."created_time" DESC  LIMIT 21; args=()
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-12-11 08:00:53.570623' AND "django_session"."session_key" = 'u193zwymi292fqs5s8kw8gs9seqxgug7'); args=('2019-12-11 08:00:53.570623', 'u193zwymi292fqs5s8kw8gs9seqxgug7')
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 5; args=(5,)
+Internal Server Error: /blog/post-list/
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\defaulttags.py", line 1021, in find_library
+    return parser.libraries[name]
+KeyError: 'my_filters_and_tags'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\djangopro\my_blog\blog\views.py", line 42, in post_list
+    'search':search, 'column':column,'tag':tag,})
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loader_tags.py", line 266, in do_extends
+    nodelist = parser.parse()
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\defaulttags.py", line 1078, in load
+    lib = find_library(parser, name)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\defaulttags.py", line 1025, in find_library
+    name, "\n".join(sorted(parser.libraries)),
+django.template.exceptions.TemplateSyntaxError: 'my_filters_and_tags' is not a registered tag library. Must be one of:
+account
+admin_list
+admin_modify
+admin_static
+admin_urls
+cache
+i18n
+l10n
+log
+mptt_admin
+mptt_tags
+notifications_tags
+socialaccount
+static
+staticfiles
+tz
+"GET /blog/post-list/ HTTP/1.1" 500 167495
+(0.001) SELECT COUNT(*) AS "__count" FROM "blog_post"; args=()
+(0.000) SELECT "blog_post"."id", "blog_post"."title", "blog_post"."avatar", "blog_post"."body", "blog_post"."created_time", "blog_post"."modified_time", "blog_post"."author_id", "blog_post"."total_views", "blog_post"."column_id" FROM "blog_post" ORDER BY "blog_post"."created_time" DESC  LIMIT 21; args=()
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-12-11 08:00:54.337651' AND "django_session"."session_key" = 'u193zwymi292fqs5s8kw8gs9seqxgug7'); args=('2019-12-11 08:00:54.337651', 'u193zwymi292fqs5s8kw8gs9seqxgug7')
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 5; args=(5,)
+Internal Server Error: /blog/post-list/
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\defaulttags.py", line 1021, in find_library
+    return parser.libraries[name]
+KeyError: 'my_filters_and_tags'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\djangopro\my_blog\blog\views.py", line 42, in post_list
+    'search':search, 'column':column,'tag':tag,})
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loader_tags.py", line 266, in do_extends
+    nodelist = parser.parse()
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\defaulttags.py", line 1078, in load
+    lib = find_library(parser, name)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\defaulttags.py", line 1025, in find_library
+    name, "\n".join(sorted(parser.libraries)),
+django.template.exceptions.TemplateSyntaxError: 'my_filters_and_tags' is not a registered tag library. Must be one of:
+account
+admin_list
+admin_modify
+admin_static
+admin_urls
+cache
+i18n
+l10n
+log
+mptt_admin
+mptt_tags
+notifications_tags
+socialaccount
+static
+staticfiles
+tz
+"GET /blog/post-list/ HTTP/1.1" 500 167495
+(0.001) SELECT COUNT(*) AS "__count" FROM "blog_post"; args=()
+(0.000) SELECT "blog_post"."id", "blog_post"."title", "blog_post"."avatar", "blog_post"."body", "blog_post"."created_time", "blog_post"."modified_time", "blog_post"."author_id", "blog_post"."total_views", "blog_post"."column_id" FROM "blog_post" ORDER BY "blog_post"."created_time" DESC  LIMIT 21; args=()
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-12-11 08:00:55.216982' AND "django_session"."session_key" = 'u193zwymi292fqs5s8kw8gs9seqxgug7'); args=('2019-12-11 08:00:55.216982', 'u193zwymi292fqs5s8kw8gs9seqxgug7')
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 5; args=(5,)
+Internal Server Error: /blog/post-list/
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\defaulttags.py", line 1021, in find_library
+    return parser.libraries[name]
+KeyError: 'my_filters_and_tags'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\djangopro\my_blog\blog\views.py", line 42, in post_list
+    'search':search, 'column':column,'tag':tag,})
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loader_tags.py", line 266, in do_extends
+    nodelist = parser.parse()
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\defaulttags.py", line 1078, in load
+    lib = find_library(parser, name)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\defaulttags.py", line 1025, in find_library
+    name, "\n".join(sorted(parser.libraries)),
+django.template.exceptions.TemplateSyntaxError: 'my_filters_and_tags' is not a registered tag library. Must be one of:
+account
+admin_list
+admin_modify
+admin_static
+admin_urls
+cache
+i18n
+l10n
+log
+mptt_admin
+mptt_tags
+notifications_tags
+socialaccount
+static
+staticfiles
+tz
+"GET /blog/post-list/ HTTP/1.1" 500 167495
+Internal Server Error: /blog/post-list/
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\djangopro\my_blog\blog\views.py", line 42, in post_list
+    'search':search, 'column':column,'tag':tag,})
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\defaulttags.py", line 209, in render
+    nodelist.append(node.render_annotated(context))
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 987, in render
+    output = self.filter_expression.resolve(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 698, in resolve
+    new_obj = func(obj, *arg_vals)
+  File "E:\djangopro\my_blog\blog\templatetags\my_filters_and_tags.py", line 20, in time_since_zh
+    diff = now - value
+TypeError: unsupported operand type(s) for -: 'datetime.datetime' and 'str'
+"GET /blog/post-list/ HTTP/1.1" 500 175776
+Internal Server Error: /blog/post-list/
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\djangopro\my_blog\blog\views.py", line 42, in post_list
+    'search':search, 'column':column,'tag':tag,})
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\defaulttags.py", line 209, in render
+    nodelist.append(node.render_annotated(context))
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 987, in render
+    output = self.filter_expression.resolve(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 698, in resolve
+    new_obj = func(obj, *arg_vals)
+  File "E:\djangopro\my_blog\blog\templatetags\my_filters_and_tags.py", line 20, in time_since_zh
+    diff = now - value
+TypeError: unsupported operand type(s) for -: 'datetime.datetime' and 'str'
+"GET /blog/post-list/ HTTP/1.1" 500 175776
+Internal Server Error: /blog/post-list/
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\djangopro\my_blog\blog\views.py", line 42, in post_list
+    'search':search, 'column':column,'tag':tag,})
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\defaulttags.py", line 209, in render
+    nodelist.append(node.render_annotated(context))
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 987, in render
+    output = self.filter_expression.resolve(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 698, in resolve
+    new_obj = func(obj, *arg_vals)
+  File "E:\djangopro\my_blog\blog\templatetags\my_filters_and_tags.py", line 20, in time_since_zh
+    diff = now - value
+TypeError: unsupported operand type(s) for -: 'datetime.datetime' and 'str'
+"GET /blog/post-list/ HTTP/1.1" 500 175776
+Internal Server Error: /blog/post-list/
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\djangopro\my_blog\blog\views.py", line 42, in post_list
+    'search':search, 'column':column,'tag':tag,})
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\defaulttags.py", line 209, in render
+    nodelist.append(node.render_annotated(context))
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 987, in render
+    output = self.filter_expression.resolve(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 698, in resolve
+    new_obj = func(obj, *arg_vals)
+  File "E:\djangopro\my_blog\blog\templatetags\my_filters_and_tags.py", line 20, in time_since_zh
+    diff = now - value
+TypeError: unsupported operand type(s) for -: 'datetime.datetime' and 'str'
+"GET /blog/post-list/ HTTP/1.1" 500 175776
+Internal Server Error: /blog/post-list/
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\djangopro\my_blog\blog\views.py", line 42, in post_list
+    'search':search, 'column':column,'tag':tag,})
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\defaulttags.py", line 209, in render
+    nodelist.append(node.render_annotated(context))
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 987, in render
+    output = self.filter_expression.resolve(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 698, in resolve
+    new_obj = func(obj, *arg_vals)
+  File "E:\djangopro\my_blog\blog\templatetags\my_filters_and_tags.py", line 20, in timesince_zh
+    diff = now - value
+TypeError: unsupported operand type(s) for -: 'datetime.datetime' and 'str'
+"GET /blog/post-list/ HTTP/1.1" 500 175772
+"GET /blog/post-list/ HTTP/1.1" 200 14004
+"GET /media/post/20191124/wm.png HTTP/1.1" 304 0
+"GET /blog/post-list/ HTTP/1.1" 200 14004
+"GET /blog/post-list/ HTTP/1.1" 200 14004
+"GET /blog/post-list/ HTTP/1.1" 200 14004
+"GET /blog/post-list/ HTTP/1.1" 200 14004
+"GET /blog/post-list/ HTTP/1.1" 200 14004
+"GET /blog/post-list/ HTTP/1.1" 200 14004
+"GET /blog/post-list/ HTTP/1.1" 200 14004
+"GET /blog/post-list/ HTTP/1.1" 200 14004
+"GET /blog/post-list/ HTTP/1.1" 200 14004
+"GET /blog/post-list/ HTTP/1.1" 200 14004
+"GET /blog/post-list/ HTTP/1.1" 200 14004
+"GET /blog/post-list/ HTTP/1.1" 200 14004
+"GET /blog/post-list/ HTTP/1.1" 200 14004
+"GET /blog/post-list/ HTTP/1.1" 200 14004
+"GET /blog/post-list/ HTTP/1.1" 200 14004
+"GET /blog/post-list/ HTTP/1.1" 200 14004
+Not Found: /blog
+"GET /blog HTTP/1.1" 404 2966
+Internal Server Error: /blog/post-list/
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\defaulttags.py", line 1021, in find_library
+    return parser.libraries[name]
+KeyError: 'my_filters_and_tags'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\djangopro\my_blog\blog\views.py", line 42, in post_list
+    'search':search, 'column':column,'tag':tag,})
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loader_tags.py", line 266, in do_extends
+    nodelist = parser.parse()
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\defaulttags.py", line 1078, in load
+    lib = find_library(parser, name)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\defaulttags.py", line 1025, in find_library
+    name, "\n".join(sorted(parser.libraries)),
+django.template.exceptions.TemplateSyntaxError: 'my_filters_and_tags' is not a registered tag library. Must be one of:
+account
+admin_list
+admin_modify
+admin_static
+admin_urls
+cache
+i18n
+l10n
+log
+mptt_admin
+mptt_tags
+notifications_tags
+socialaccount
+static
+staticfiles
+tz
+"GET /blog/post-list/ HTTP/1.1" 500 167189
+Internal Server Error: /blog/post-list/
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\defaulttags.py", line 1021, in find_library
+    return parser.libraries[name]
+KeyError: 'my_filters_and_tags'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\djangopro\my_blog\blog\views.py", line 42, in post_list
+    'search':search, 'column':column,'tag':tag,})
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loader_tags.py", line 266, in do_extends
+    nodelist = parser.parse()
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\defaulttags.py", line 1078, in load
+    lib = find_library(parser, name)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\defaulttags.py", line 1025, in find_library
+    name, "\n".join(sorted(parser.libraries)),
+django.template.exceptions.TemplateSyntaxError: 'my_filters_and_tags' is not a registered tag library. Must be one of:
+account
+admin_list
+admin_modify
+admin_static
+admin_urls
+cache
+i18n
+l10n
+log
+mptt_admin
+mptt_tags
+notifications_tags
+socialaccount
+static
+staticfiles
+tz
+"GET /blog/post-list/ HTTP/1.1" 500 167324
+Internal Server Error: /blog/post-list/
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\defaulttags.py", line 1021, in find_library
+    return parser.libraries[name]
+KeyError: 'my_filters_and_tags'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\djangopro\my_blog\blog\views.py", line 42, in post_list
+    'search':search, 'column':column,'tag':tag,})
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loader_tags.py", line 266, in do_extends
+    nodelist = parser.parse()
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\defaulttags.py", line 1078, in load
+    lib = find_library(parser, name)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\defaulttags.py", line 1025, in find_library
+    name, "\n".join(sorted(parser.libraries)),
+django.template.exceptions.TemplateSyntaxError: 'my_filters_and_tags' is not a registered tag library. Must be one of:
+account
+admin_list
+admin_modify
+admin_static
+admin_urls
+cache
+i18n
+l10n
+log
+mptt_admin
+mptt_tags
+notifications_tags
+socialaccount
+static
+staticfiles
+tz
+"GET /blog/post-list/ HTTP/1.1" 500 167324
+"GET /blog/post-list/ HTTP/1.1" 200 14004
+"GET /blog/post-list/ HTTP/1.1" 200 12328
+Internal Server Error: /blog/post-detail/19/
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\djangopro\my_blog\blog\views.py", line 60, in post_detail
+    {'post': post, 'comments': comments,
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\defaulttags.py", line 443, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\urls\base.py", line 90, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\urls\resolvers.py", line 668, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'increase_likes' not found. 'increase_likes' is not a valid view function or pattern name.
+"GET /blog/post-detail/19/ HTTP/1.1" 500 184709
+Internal Server Error: /blog/post-detail/19/
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\djangopro\my_blog\blog\views.py", line 60, in post_detail
+    {'post': post, 'comments': comments,
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\defaulttags.py", line 443, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\urls\base.py", line 90, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\urls\resolvers.py", line 668, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'increase_likes' not found. 'increase_likes' is not a valid view function or pattern name.
+"GET /blog/post-detail/19/ HTTP/1.1" 500 184844
+Internal Server Error: /blog/post-detail/19/
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\djangopro\my_blog\blog\views.py", line 60, in post_detail
+    {'post': post, 'comments': comments,
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\template\defaulttags.py", line 443, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\urls\base.py", line 90, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "D:\Anaconda3\envs\myblog\lib\site-packages\django\urls\resolvers.py", line 668, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'increase_likes' not found. 'increase_likes' is not a valid view function or pattern name.
+"GET /blog/post-detail/19/ HTTP/1.1" 500 184844
+"GET /blog/post-detail/19/ HTTP/1.1" 200 51701
+"GET /static/csrf.js HTTP/1.1" 304 0
+"GET /static/prism/prism.css HTTP/1.1" 304 0
+"GET /static/sticky_sidebar/jquery.sticky-sidebar.min.js HTTP/1.1" 304 0
+"GET /userprofile/login/ HTTP/1.1" 200 5231
+"POST /userprofile/login/ HTTP/1.1" 302 0
+"GET /blog/post-list/ HTTP/1.1" 200 14004
+"GET /blog/post-detail/19/ HTTP/1.1" 200 57381
+"POST /blog/increase_likes/19/ HTTP/1.1" 200 7

@@ -20,12 +20,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'jl+$*ddysi1g#0^s9p65yzj*e@b&x9!1&kwl26duzmcfpg)7bp'
+SECRET_KEY = None
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['119.29.83.38:9999']
+ALLOWED_HOSTS = None
 
 # 静态文件收集目录
 STATIC_ROOT = os.path.join(BASE_DIR, 'collected_static')
@@ -201,14 +201,14 @@ MEDIA_URL='/media/'
 MEDIA_ROOT=os.path.join(BASE_DIR, 'media/')
 
 # SMTP服务器，改为你的邮箱的smtp!
-EMAIL_HOST = 'smtp.qq.com'
+EMAIL_HOST = None
 # 改为你自己的邮箱名！
-EMAIL_HOST_USER = 'xk_wang@qq.com'
+EMAIL_HOST_USER = None
 # 你的邮箱密码
-EMAIL_HOST_PASSWORD = 'jddotklvcnomdiaj'
+EMAIL_HOST_PASSWORD = None
 # 发送邮件的端口
 EMAIL_PORT = 25
 # 是否使用 TLS
 EMAIL_USE_TLS = True
 # 默认的发件人
-DEFAULT_FROM_EMAIL = 'free_blog <xk_wang@qq.com>'
+DEFAULT_FROM_EMAIL = None
